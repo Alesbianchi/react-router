@@ -8,6 +8,9 @@ import HomePage from './pages/HomePage';
 import ContactsPage from './pages/ContactsPage';
 import AboutPage from './pages/AboutPage';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 function App() {
 
 
