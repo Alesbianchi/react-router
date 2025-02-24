@@ -5,7 +5,7 @@ export default function ContactsPage() {
     return (
         <>
             <Header />
-            <h2>CONTACT</h2>
+            <h2>Lista dei post</h2>
             <Footer />
         </>
 

@@ -5,7 +5,7 @@ export default function AboutPage() {
     return (
         <>
             <Header />
-            <h2>ABOUT</h2>
+            <h2>Chi siamo</h2>
             <Footer />
         </>
 
