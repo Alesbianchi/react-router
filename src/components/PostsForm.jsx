@@ -1,11 +1,15 @@
-import { useState } from 'react';
+import { useState, } from 'react';
+import axios from "axios";
 
-
-
+const initialFormData = {
+    titolo: "",
+    image: "",
+    contenuto: [],
+};
 
 const PostsForm = () => {
 
-    const [postsState, setPostsState] = useState(posts);
+    const [postsState, setPostsState] = useState();
     const [formData, setFormData] = useState(initialFormData);
 
     function handleFormData(e) {

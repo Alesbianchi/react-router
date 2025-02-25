@@ -1,5 +1,5 @@
 
-import ListaPosts from "../components/ListaPosts";
+import ListaPosts from "./ListaPosts";
 
 
 export default function PostsPage() {

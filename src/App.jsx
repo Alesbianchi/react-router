@@ -1,6 +1,4 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -9,7 +7,7 @@ import ContactsPage from './pages/ContactsPage';
 import AboutPage from './pages/AboutPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CreatePosts from "./pages/CreatePosts";
-import PostsPage from "./pages/PostsPage";
+import ListaPosts from "./pages/ListaPosts";
 
 function App() {
 
@@ -21,8 +19,9 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/contacts" element={<ContactsPage />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/posts" element={<PostsPage />} />
-        <Route path="/crea" element={<CreatePosts />} />
+        <Route path="/posts" element={<ListaPosts />}>
+          <Route path="crea" element={<CreatePosts />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   )
