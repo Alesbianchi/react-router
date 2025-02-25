@@ -21,6 +21,7 @@ export default function Navbar(props) {
                     </li>
                     <li className="nav-item"><NavLink className="nav-link" to="/contacts">Lista dei post</NavLink></li>
                     <li className="nav-item"><NavLink className="nav-link" to="/about">Chi siamo</NavLink></li>
+                    <li className="nav-item"><NavLink className="nav-link" to="/about">Crea post</NavLink></li>
                 </ul>
             </nav>
 
