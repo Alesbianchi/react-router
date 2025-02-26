@@ -3,7 +3,7 @@ import axios from "axios";
 
 const initialFormData = {
     title: "",
-    contenuto: "",
+    content: "",
     categoria: "",
     tags: [],
 };
@@ -62,7 +62,7 @@ const PostsForm = () => {
 
                 <textarea
                     type="text"
-                    name="contenuto"
+                    name="content"
                     onChange={handleFormData}
                     value={formData.contenuto}
                     placeholder='contenuto post'

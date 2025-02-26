@@ -42,6 +42,7 @@ export default function ListaPosts() {
                     <div className='postItem' key={post.id}>
                         <h2>{post.title}</h2>
                         <img src={post.image} alt={post.title} />
+                        <p>{post.content} </p>
                         <p>Tags: {Array.isArray(post.tags) ? post.tags.join(", ") : post.tags || "Nessun tag"}</p>
                         <Link to={`/posts/${post.id}`}>Vai al dettaglio</Link>
                         <button onClick={() => removePost(post.id)}>Cancella Post</button>
