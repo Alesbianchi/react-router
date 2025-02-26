@@ -2,18 +2,19 @@ import { useState, } from 'react';
 import axios from "axios";
 
 const initialFormData = {
-    titolo: "",
-    image: "",
-    contenuto: [],
+    title: "",
+    contenuto: "",
+    categoria: "",
+    tags: [],
 };
 
 const PostsForm = () => {
 
-    const [postsState, setPostsState] = useState();
+    const [posts, setPosts] = useState([]);
     const [formData, setFormData] = useState(initialFormData);
 
     function handleFormData(e) {
-        const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
+        const value = e.target.name === "tags" ? e.target.value.split(",") : e.target.value;
 
         setFormData((currentFormData) => ({
             ...currentFormData, [e.target.name]: value,
@@ -28,8 +29,8 @@ const PostsForm = () => {
             .then(res => {
                 // console.log(res.data);
                 // uso la risposta dell'API per creare il nuovo array menu
-                // setMenu((currentMenu) => [...currentMenu, res.data])
-                navigate("/pizze");
+                setPosts((currentPosts) => [...currentPosts, res.data])
+                // navigate("/post");
             }
             )
             .catch(err => console.log(err))
@@ -45,7 +46,7 @@ const PostsForm = () => {
             <form id='formpost' action="#" onSubmit={handleSubmit} >
                 <input
                     type="text"
-                    name="titolo"
+                    name="title"
                     onChange={handleFormData}
                     value={formData.titolo}
                     placeholder='Nome post'
@@ -53,10 +54,10 @@ const PostsForm = () => {
 
                 <input
                     type="text"
-                    name="autore"
+                    name="tags"
                     onChange={handleFormData}
-                    value={formData.autore}
-                    placeholder='autore post'
+                    value={formData.tags}
+                    placeholder='tag post'
                 />
 
                 <textarea
@@ -76,7 +77,7 @@ const PostsForm = () => {
                 />
                 <button>Aggiungi post</button>
             </form>
-            {
+            {/* {
                 postsState.map((post) => (
                     <div key={post.id}>
                         <h2>{post.titolo}</h2>
@@ -87,7 +88,7 @@ const PostsForm = () => {
                     </div>
                 ))
 
-            }
+            } */}
         </>
 
     )
